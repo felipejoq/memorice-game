@@ -20,13 +20,16 @@ const showInDeck = (htmlElement, deck) => {
     let sizeDeck = deck.length;
     for (let i = 0; i < sizeDeck; ++i) {
         const button = document.createElement("button");
+        const div = document.createElement("div");
+        div.classList.add("container-button");
         button.style.backgroundImage = `url("${deck[i].url}")`;
         button.style.backgroundSize = 'cover';
         button.style.backgroundPosition = "center";
         button.classList.add("box-img", "flex", deck[i].name)
         button.name = `${deck[i].name}`;
-        button.innerHTML = `<img src="./img/cover.jpg" class="cover-${button.name}"/>`;
-        htmlElement.append(button);
+        button.innerHTML = `<img src="./img/cover.jpg" class="cover"/>`;
+        div.append(button);
+        htmlElement.append(div);
     }
 }
 const hiddenButtons = (buttons) => {
@@ -34,7 +37,7 @@ const hiddenButtons = (buttons) => {
         button.disabled = false;
         button.style.cursor = "pointer";
         button.classList.remove("animate__animated", "animate__flipInY");
-        button.innerHTML = `<img src="./img/cover.jpg" class="cover-${button.name}"/>`;
+        button.innerHTML = `<img src="./img/cover.jpg" class="cover"/>`;
     }
 }
 

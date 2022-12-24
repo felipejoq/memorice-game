@@ -4,9 +4,9 @@ let arrButtonClicked = [];
 let arrHitsButtons = [];
 let saveButton = null;
 let arrHintHistory = [];
-const soundOpenCard = new Audio("../sound/open_card.wav");
-const soundHintPairCard = new Audio("../sound/hint_pair_card.wav");
-const soundWinGame = new Audio("../sound/win_game.wav");
+const soundOpenCard = new Audio("./sound/open_card.wav");
+const soundHintPairCard = new Audio("./sound/hint_pair_card.wav");
+const soundWinGame = new Audio("./sound/win_game.wav");
 
 export const shuffleImages = (arrImages) => {
     return [...arrImages.sort(() => 0.5 - Math.random())];
@@ -92,7 +92,7 @@ const launchWinAlert = () => {
     Swal.fire({
         title: '¡MUY BIEN!',
         text: '¡TIENES UNA MEMORIA INCREÍBLE!',
-        imageUrl: '../img/win_award.svg',
+        imageUrl: './img/win_award.svg',
         imageWidth: 400,
         imageHeight: 200,
         imageAlt: '¡GANASTE!',

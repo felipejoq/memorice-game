@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Juego de Memoria - Uncodigo.com</title>
+
+    <script src="https://kit.fontawesome.com/58e5f1ed41.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -25,12 +28,17 @@
 <main class="flex">
     <div id="game" class="flex game">
     </div>
+    <div class="flex controls">
+        <a id="btn-reset-game" class="btn btn-reset-game"><i class="fa-solid fa-repeat"></i> REINICIAR</a>
+        <a id="btn-mute" class="btn btn-mute-game"><i id="icon-sound" class="fa-solid fa-volume-high"></i> SONIDO</a>
+    </div>
 </main>
 
 <footer class="flex">
     <div class="copyright">Felipe Jofré Quevedo - Uncodigo.com</div>
 </footer>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="module" src="./js/app.js"></script>
 </body>
 </html>

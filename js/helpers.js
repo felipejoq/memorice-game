@@ -25,7 +25,7 @@ const showInDeck = (htmlElement, deck) => {
         button.style.backgroundPosition = "center";
         button.classList.add("box-img", "flex", deck[i].name)
         button.name = `${deck[i].name}`;
-        button.innerHTML = `<img src="../img/cover.jpg" class="cover-${button.name}"/>`;
+        button.innerHTML = `<img src="/img/cover.jpg" class="cover-${button.name}"/>`;
         htmlElement.append(button);
     }
 }
@@ -34,7 +34,7 @@ const hiddenButtons = (buttons) => {
         button.disabled = false;
         button.style.cursor = "pointer";
         button.classList.remove("animate__animated", "animate__flipInY");
-        button.innerHTML = `<img src="../img/cover.jpg" class="cover-${button.name}"/>`;
+        button.innerHTML = `<img src="/img/cover.jpg" class="cover-${button.name}"/>`;
     }
 }
 

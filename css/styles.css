@@ -123,6 +123,7 @@ header {
     align-content: center;
     align-items: center;
     gap: 1rem;
+    border-radius: 0.3rem;
 }
 
 .btn {
@@ -235,7 +236,6 @@ header {
         align-content: center;
         align-items: center;
         gap: 1rem;
-        border-radius: 0.3rem;
     }
 
     .btn {

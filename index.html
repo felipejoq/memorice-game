@@ -22,10 +22,10 @@
     </div>
     <nav class="flex">
         <ul class="flex navbar-header">
-            <li class="flex">Home</li>
-            <li class="flex">Jugar</li>
-            <li class="flex">Contacto</li>
-            <li class="flex">Créditos</li>
+            <li class="flex"><a href="./">Home</a></li>
+            <li class="flex"><a href="./">Jugar</a></li>
+            <li class="flex"><a href="#" id="contact">Contacto</a></li>
+            <li class="flex"><a href="#credits">Créditos</a></li>
         </ul>
     </nav>
 </header>
@@ -45,8 +45,45 @@
     </div>
 </main>
 
+<section class="flex explain-card">
+    <div class="title-card">
+        <h2>¿Qué es "Memorice"?</h2>
+    </div>
+    <div class="body-card">
+        <p>"Memorice" es el típico juego de cartas donde se deben buscar los pares.</p>
+        <p>En una matriz o cuadrícula de 4x4 ranuras se distribuyen aleatoriamente 8 pares de cartas que deben ser encontradas para ¡GANAR!</p>
+        <p>Todo esto como ejercicio para practicar las tecnologías de programación en JavaScript de la mano con HTML y CSS.</p>
+    </div>
+
+    <div class="title-card">
+        <h2>¿Cómo se hace?</h2>
+    </div>
+    <div class="body-card">
+        <p>Haciendo uso de HTML y CSS se le entrega la estructura que tiene el sitio.</p>
+        <p>Con una serie de funciones y métodos escritos en JavaScript se le entrega la interactividad al sitio.</p>
+        <p>Es así como, por ejemplo, cuando uno hace "clic" en una tarjeta esta se gira animada con CSS y se descubre gracias a la interacción de funciones y métodos escritos en JavaScript.</p>
+        <p>Estos métodos y funciones son los encargados de girar las cartas, de mezclarlas, verificar si se han encontrado pares, verificar si el jugador ha ganado, entre otras.</p>
+    </div>
+
+    <div class="title-card">
+        <h2>El código fuente</h2>
+    </div>
+    <div class="body-card">
+        <p>¡Si claro!, comparto con usted el código fuente, el que puede encontrar en el siguiente repositorio de mi perfil de GitHub.com: <a href="" target="_blank" title="Repositorio del juego Memorice">Repositorio de "Memorice Game"</a></p>
+    </div>
+
+    <div id="credits" class="title-card">
+        <h2>Créditos y Recursos</h2>
+    </div>
+    <div class="body-card">
+        <p>Este proyecto está escrito con las siguientes tecnologías: JavaScript, HTML y CSS.</p>
+        <p>También se hizo uso de algunas librerías de animación tales como: <a href="https://animate.style/" target="_blank">Animate.css</a>, <a href="https://sweetalert2.github.io/" target="_blank">Sweat Alert 2</a> y <a href="https://fontawesome.com/v4/get-started/" target="_blank">Font Awesome</a></p>
+        <p>Para los recursos gráficos, íconos de las cards, se hizo uso del set provisto gratuitamente por: <a href="https://icon-icons.com/pack/Pamoke-icons/411" target="_blank">Pamoke Icons</a></p>
+    </div>
+</section>
+
 <footer class="flex">
-    <div class="copyright">Felipe Jofré Quevedo - Uncodigo.com</div>
+    <div class="copyright">Felipe Jofré Quevedo - <a href="https://uncodigo.com/" alt="Uncodigo.com - Sitio de Felipe Jofré">Uncodigo.com</a></div>
 </footer>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

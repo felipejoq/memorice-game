@@ -1,22 +1,19 @@
 import {btnMute, iconSound} from "./htmlElements.js";
 
-let arrButtonClicked = [];
-let arrHitsButtons = [];
-let saveButton = null;
-let arrHintHistory = [];
-const soundOpenCard = new Audio("./sound/open_card.wav");
-const soundHintPairCard = new Audio("./sound/hint_pair_card.wav");
-const soundWinGame = new Audio("./sound/win_game.wav");
+export const soundOpenCard = new Audio("./sound/open_card.wav");
+export const soundHintPairCard = new Audio("./sound/hint_pair_card.wav");
+export const soundWinGame = new Audio("./sound/win_game.wav");
 
 export const shuffleImages = (arrImages) => {
     return [...arrImages.sort(() => 0.5 - Math.random())];
 }
+
 export const populateGameZone = (htmlElement, firstDeck, secondDeck) => {
     showInDeck(htmlElement, firstDeck);
     showInDeck(htmlElement, secondDeck)
 }
 
-const showInDeck = (htmlElement, deck) => {
+export const showInDeck = (htmlElement, deck) => {
     let sizeDeck = deck.length;
     for (let i = 0; i < sizeDeck; ++i) {
         const button = document.createElement("button");
@@ -27,71 +24,29 @@ const showInDeck = (htmlElement, deck) => {
         button.style.backgroundPosition = "center";
         button.classList.add("box-img", "flex", deck[i].name)
         button.name = `${deck[i].name}`;
-        button.innerHTML = `<img src="./img/cover.jpg" class="cover"/>`;
+        button.innerHTML = `<img alt="Cover Card" src="./img/cover.jpg" class="cover"/>`;
         div.append(button);
         htmlElement.append(div);
     }
 }
-const hiddenButtons = (buttons) => {
+export const hiddenButtons = (buttons) => {
     for (const button of buttons) {
         button.disabled = false;
         button.style.cursor = "pointer";
         button.classList.remove("animate__animated", "animate__flipInY");
-        button.innerHTML = `<img src="./img/cover.jpg" class="cover"/>`;
+        button.innerHTML = `<img alt="Cover Card" src="./img/cover.jpg" class="cover"/>`;
     }
 }
 
-export const disAndCoverButton = (buttons) => {
-    for (const button of buttons) {
-        button.addEventListener("click", (event) => {
-            openButton(button);
-        });
-    }
-}
-
-const openButton = (button) => {
-
-    if (arrButtonClicked.length >= 2) {
-        hiddenButtons(arrButtonClicked);
-        arrButtonClicked = [];
-    }
-
-    arrButtonClicked.push(button);
-
-    if (isMatch()) {
-        arrHitsButtons.push(saveButton, button);
-        soundHintPairCard.play();
-        for (const button of arrHitsButtons) {
-            button.innerHTML = "";
-            button.disabled = true;
-        }
-
-        arrHintHistory.push(button);
-        arrButtonClicked = [];
-
-        if (isWin(arrHintHistory)) {
-            launchWinAlert();
-        }
-        return;
-    }
-    button.innerHTML = "";
-    button.disabled = true;
-    button.style.cursor = "not-allowed";
-    saveButton = button;
-    button.classList.add();
-    button.classList.add("animate__animated", "animate__flipInY");
-    soundOpenCard.play();
-}
-
-const isMatch = () => {
+export const isMatch = (arrButtonClicked) => {
     return arrButtonClicked.length >= 2 ? arrButtonClicked[0].name === arrButtonClicked[1].name : false;
 }
 
-const isWin = (arrHintHistory) => {
+export const isWin = (arrHintHistory) => {
     return arrHintHistory.length === 8;
 }
 
-const launchWinAlert = () => {
+export const launchWinAlert = () => {
     Swal.fire({
         title: '¡MUY BIEN!',
         text: '¡TIENES UNA MEMORIA INCREÍBLE!',
@@ -112,11 +67,11 @@ const launchWinAlert = () => {
     soundWinGame.play();
 }
 
-const isMuted = () => {
+export const isMuted = () => {
     return soundOpenCard.muted && soundWinGame.muted && soundHintPairCard.muted;
 }
 
-const sounsControl = () => {
+export const soundControl = () => {
     if (!isMuted()) {
         soundOpenCard.muted = true;
         soundWinGame.muted = true;
@@ -134,10 +89,7 @@ const sounsControl = () => {
     }
 
 }
-
-btnMute.addEventListener('click', sounsControl);
-
-export  const resetGameZone = (gameZone) => {
+export const resetGameZone = (gameZone, arrButtonClicked, arrHitsButtons, saveButton, arrHintHistory) => {
     gameZone.innerHTML = "";
     arrButtonClicked = [];
     arrHitsButtons = [];
@@ -158,5 +110,19 @@ export const areSureResetGame = () => {
     })
 }
 
+export const launchContactModal = () => {
 
+    let userEmail = "felipe";
+    let at = "@";
+    let domainEmail = "uncodigo.com";
+
+    return Swal.fire({
+        title: 'Contacto!',
+        text: `Mi nombre es Felipe Jofré, soy Programador Web y puede contactarme al correo: ${userEmail}${at}${domainEmail}`,
+        imageUrl: './img/email-icon.png',
+        imageWidth: 256,
+        imageHeight: 256,
+        imageAlt: 'Contacto',
+    })
+}
 

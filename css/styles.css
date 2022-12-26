@@ -67,6 +67,19 @@ header {
     border-radius: 0.3rem;
 }
 
+.navbar-header li:hover {
+    border: 1px solid #123248;
+}
+
+.navbar-header li a{
+    color: #3b3232;
+    font-weight: 700;
+}
+
+.navbar-header li a:hover  {
+    color: #123248;
+}
+
 .principal {
     flex-direction: column;
     justify-content: center;

@@ -2,7 +2,7 @@
 "Memorice Game" es un juego de memoria donde hay que encontrar las parejas o pares de cartas.
 
 # Vista previa:
-![Captura de la vista que permite jugar](https://github.com/felipejoq/memorice-game/blob/main/screen-shot.jpg?raw=true)
+![Captura de la vista que permite jugar](https://github.com/felipejoq/memorice-game/blob/main/img/screen-shot.jpg?raw=true)
 
 
 ### ¿Qué es "Memorice"? 🏆

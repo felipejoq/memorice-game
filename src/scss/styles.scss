@@ -1,0 +1,56 @@
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: auto;
+  margin: 5px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border: 1px solid magenta;
+}
+
+.container-card {
+  position: relative;
+}
+
+.tap {
+  width: 23%;
+  border: 1px solid green;
+}
+
+.tap-body {
+  width: 100%;
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  border: 1px solid skyblue;
+}
+
+.image-secret {
+  width: 100%;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.hidden {
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
+}

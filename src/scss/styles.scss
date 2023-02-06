@@ -44,6 +44,11 @@ main {
 
 }
 
+.disabled {
+  pointer-events: none;
+  filter: saturate(0) blur(0.1rem);
+}
+
 .visible {
   opacity: 1;
   transition: opacity 0.2s linear;
@@ -52,4 +57,30 @@ main {
 .hidden {
   opacity: 0;
   transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
+.time-over {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  z-index: 200;
+}
+
+.text-time-over {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  max-width: 100%;
+}
+.icon-time-over {
+  text-align: center;
+  height: auto;
+}
+.deadline-icon {
+  max-width: 50%;
+  height: 10rem;
 }

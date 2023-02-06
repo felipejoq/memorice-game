@@ -1,7 +1,7 @@
 import {cards} from "./img/cards";
+import {covers, images} from "./elements.html";
+import {addScore} from "./actions";
 
-const images = document.getElementsByClassName("image-secret");
-const covers = document.getElementsByClassName("cover");
 let memory = [];
 
 export const shuffle = (array) => {
@@ -50,7 +50,7 @@ const hidden = (element) => {
 
 const checkMatch = () => {
     if (memory.length === 2) {
-        isMatch()
+        isMatch() ? addScore(1) : addScore(0)
     }
 }
 

@@ -7,18 +7,10 @@
 }
 
 main {
-  height: auto;
-  margin: 5px;
+  width: 100%;
 }
 
-.grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem;
-  border: 1px solid magenta;
-}
+.grid {}
 
 .container-card {
   position: relative;
@@ -26,7 +18,7 @@ main {
 
 .tap {
   width: 23%;
-  border: 1px solid green;
+  margin: 0 0 1rem 0;
 }
 
 .tap-body {
@@ -38,11 +30,18 @@ main {
   left: 0;
   width: 100%;
   z-index: 100;
-  border: 1px solid skyblue;
+  border-radius: 1rem;
+}
+
+.cover:hover {
 }
 
 .image-secret {
   width: 100%;
+}
+
+.image-secret:hover {
+
 }
 
 .visible {
